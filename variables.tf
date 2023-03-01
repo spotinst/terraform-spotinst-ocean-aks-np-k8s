@@ -4,12 +4,11 @@ variable "spotinst_token" {
   type        = string
   description = "Spot Personal Access token"
 }
-
 variable "spotinst_account" {
   type        = string
   description = "Spot account ID"
 }
-variable "name" {
+variable "ocean_cluster_name" {
   type        = string
   description = "Add a name for the Ocean cluster"
 }
@@ -33,33 +32,33 @@ variable "aks_resource_group_name" {
   type        = string
   description = "Required on cluster.aks object."
 }
-variable "autoscale_is_enabled" {
+variable "is_autoscale_enabled" {
   type        = string
   default     = true
   description = "Enable the Ocean Kubernetes Autoscaler."
 }
-variable "max_vcpu" {
+variable "resource_limits_max_vcpu" {
   type        = number
   description = "The maximum cpu in vCpu units that can be allocated to the cluster."
 }
-variable "max_memory_gib" {
+variable "resource_limits_max_memory_gib" {
   type        = number
   description = "The maximum memory in GiB units that can be allocated to the cluster."
 }
-variable "max_scale_down_percentage" {
+variable "autoscale_max_scale_down_percentage" {
   type        = number
   description = "The maximum percentage allowed to scale down in a single scaling action."
 }
-variable "is_enabled" {
+variable "is_automatic_autoscaler_headroom_enabled" {
   type        = bool
   default     = true
   description = "Enable automatic headroom. When set to True, Ocean configures and optimizes headroom automatically."
 }
-variable "percentage" {
+variable "autoscale_headroom_automatic_percentage" {
   type        = number
   description = "Optionally set a number between 0-100 to control the percentage of total cluster resources dedicated to headroom. Relevant when isEnabled=true."
 }
-variable "grace_period" {
+variable "health_grace_period" {
   type        = number
   default     = 600
   description = "Optionally set a number between 0-100 to control the percentage of total cluster resources dedicated to headroom. Relevant when isEnabled=true."
@@ -88,11 +87,11 @@ variable "os_type" {
   type        = string
   description = "The os type of the os disk."
 }
-variable "min_count" {
+variable "node_min_count" {
   type        = number
   description = "Minimum node count limit."
 }
-variable "max_count" {
+variable "node_max_count" {
   type        = number
   description = "Maximum node count limit."
 }

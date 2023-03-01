@@ -5,7 +5,7 @@ provider "spotinst" {
   account = var.spotinst_account
 }
 resource "spotinst_ocean_aks_np" "v2" {
-  name                                   = var.name
+  name                                   = var.ocean_cluster_name
   aks_region                             = var.aks_region
   controller_cluster_id                  = var.controller_cluster_id
   aks_cluster_name                       = var.aks_cluster_name
@@ -13,22 +13,22 @@ resource "spotinst_ocean_aks_np" "v2" {
   aks_resource_group_name                = var.aks_resource_group_name
 
   autoscaler {
-    autoscale_is_enabled      = var.autoscale_is_enabled
+    autoscale_is_enabled      = var.is_autoscale_enabled
 
     resource_limits {
-      max_vcpu       = var.max_vcpu
-      max_memory_gib = var.max_memory_gib
+      max_vcpu       = var.resource_limits_max_vcpu
+      max_memory_gib = var.resource_limits_max_memory_gib
     }
 
     autoscale_down {
-      max_scale_down_percentage = var.max_scale_down_percentage
+      max_scale_down_percentage = var.autoscale_max_scale_down_percentage
     }
 
     autoscale_headroom {
 
       automatic {
-        is_enabled = var.is_enabled
-        percentage = var.percentage
+        is_enabled = var.is_automatic_autoscaler_headroom_enabled
+        percentage = var.autoscale_headroom_automatic_percentage
       }
 
     }
@@ -36,7 +36,7 @@ resource "spotinst_ocean_aks_np" "v2" {
   }
 
   health {
-    grace_period = var.grace_period
+    grace_period = var.health_grace_period
   }
   availability_zones = var.availability_zones
   max_pods_per_node     = var.max_pods_per_node
@@ -45,8 +45,8 @@ resource "spotinst_ocean_aks_np" "v2" {
   os_disk_type         = var.os_disk_type
   os_type             = var.os_type
 
-  min_count = var.min_count
-  max_count = var.max_count
+  min_count = var.node_min_count
+  max_count = var.node_max_count
 
   spot_percentage      = var.spot_percentage
   fallback_to_ondemand = var.fallback_to_ondemand
