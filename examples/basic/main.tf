@@ -6,17 +6,17 @@ module "ocean-aks-np" {
 
   # Configuration
   ocean_cluster_name                       = "oceanClusterName"
-  aks_region                               = "region"
+  aks_region                               = "eastus"
   controller_cluster_id                    = "controllerId"
   aks_cluster_name                         = "aksClusterName"
   aks_infrastructure_resource_group_name   = "aksInfrastructureResourceGroupName"
   aks_resource_group_name                  = "resourceGroup"
-  is_autoscale_enabled                     = true
-  resource_limits_max_vcpu                 = 121
-  resource_limits_max_memory_gib           = 120
-  autoscale_max_scale_down_percentage      = 10
-  is_automatic_autoscaler_headroom_enabled = true
-  autoscale_headroom_automatic_percentage  = 10
+  autoscaler_is_enabled                    = true
+  autoscaler_resource_limits_max_vcpu      = 121
+  autoscaler_resource_limits_max_memory_gib= 120
+  autoscaler_max_scale_down_percentage     = 10
+  autoscaler_headroom_automatic_is_enabled = true
+  autoscaler_headroom_automatic_percentage  = 10
   health_grace_period                      = 300
   max_pods_per_node                        = 110
   enable_node_public_ip                    = false

@@ -32,29 +32,29 @@ variable "aks_resource_group_name" {
   type        = string
   description = "Required on cluster.aks object."
 }
-variable "is_autoscale_enabled" {
+variable "autoscaler_is_enabled" {
   type        = string
   default     = true
   description = "Enable the Ocean Kubernetes Autoscaler."
 }
-variable "resource_limits_max_vcpu" {
+variable "autoscaler_resource_limits_max_vcpu" {
   type        = number
   description = "The maximum cpu in vCpu units that can be allocated to the cluster."
 }
-variable "resource_limits_max_memory_gib" {
+variable "autoscaler_resource_limits_max_memory_gib" {
   type        = number
   description = "The maximum memory in GiB units that can be allocated to the cluster."
 }
-variable "autoscale_max_scale_down_percentage" {
+variable "autoscaler_max_scale_down_percentage" {
   type        = number
   description = "The maximum percentage allowed to scale down in a single scaling action."
 }
-variable "is_automatic_autoscaler_headroom_enabled" {
+variable "autoscaler_headroom_automatic_is_enabled" {
   type        = bool
   default     = true
   description = "Enable automatic headroom. When set to True, Ocean configures and optimizes headroom automatically."
 }
-variable "autoscale_headroom_automatic_percentage" {
+variable "autoscaler_headroom_automatic_percentage" {
   type        = number
   description = "Optionally set a number between 0-100 to control the percentage of total cluster resources dedicated to headroom. Relevant when isEnabled=true."
 }

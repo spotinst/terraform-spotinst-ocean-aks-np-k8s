@@ -13,22 +13,22 @@ resource "spotinst_ocean_aks_np" "v2" {
   aks_resource_group_name                = var.aks_resource_group_name
 
   autoscaler {
-    autoscale_is_enabled      = var.is_autoscale_enabled
+    autoscale_is_enabled      = var.autoscaler_is_enabled
 
     resource_limits {
-      max_vcpu       = var.resource_limits_max_vcpu
-      max_memory_gib = var.resource_limits_max_memory_gib
+      max_vcpu       = var.autoscaler_resource_limits_max_vcpu
+      max_memory_gib = var.autoscaler_resource_limits_max_memory_gib
     }
 
     autoscale_down {
-      max_scale_down_percentage = var.autoscale_max_scale_down_percentage
+      max_scale_down_percentage = var.autoscaler_max_scale_down_percentage
     }
 
     autoscale_headroom {
 
       automatic {
-        is_enabled = var.is_automatic_autoscaler_headroom_enabled
-        percentage = var.autoscale_headroom_automatic_percentage
+        is_enabled = var.autoscaler_headroom_automatic_is_enabled
+        percentage = var.autoscaler_headroom_automatic_percentage
       }
 
     }
