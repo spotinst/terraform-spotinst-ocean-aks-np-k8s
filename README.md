@@ -56,7 +56,7 @@ module "ocean-aks-np" {
   aks_resource_group_name                  = "resourceGroup"
   autoscaler_is_enabled                    = true
   autoscaler_resource_limits_max_vcpu      = 20000
-  autoscaler_resource_limits_max_memory_gib= 10000
+  autoscaler_resource_limits_max_memory_gib= 100000
   autoscaler_max_scale_down_percentage     = 10
   autoscaler_headroom_automatic_is_enabled = true
   autoscaler_headroom_automatic_percentage = 5
