@@ -49,11 +49,7 @@ variable "autoscaler_max_scale_down_percentage" {
   type        = number
   description = "The maximum percentage allowed to scale down in a single scaling action."
 }
-variable "autoscaler_headroom_automatic_is_enabled" {
-  type        = bool
-  default     = true
-  description = "Enable automatic headroom. When set to True, Ocean configures and optimizes headroom automatically."
-}
+
 variable "autoscaler_headroom_automatic_percentage" {
   type        = number
   description = "Optionally set a number between 0-100 to control the percentage of total cluster resources dedicated to headroom. Relevant when isEnabled=true."
@@ -123,4 +119,12 @@ variable "labels" {
   type        = map(string)
   default     = null
   description = "An array of labels to add to the virtual node group.Only custom user labels are allowed, and not Kubernetes built-in labels or Spot internal labels."
+}
+variable "scheduling_shutdown_hours_time_windows" {
+  type        = list(string)
+  description = ""
+}
+variable "scheduling_shutdown_hours_is_enabled" {
+  type        = bool
+  description = ""
 }
