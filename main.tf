@@ -27,12 +27,17 @@ resource "spotinst_ocean_aks_np" "v2" {
     autoscale_headroom {
 
       automatic {
-        is_enabled = var.autoscaler_headroom_automatic_is_enabled
         percentage = var.autoscaler_headroom_automatic_percentage
       }
 
     }
 
+  }
+  scheduling{
+    shutdown_hours{
+      is_enabled=var.scheduling_shutdown_hours_is_enabled
+      time_windows=var.scheduling_shutdown_hours_time_windows
+    }
   }
 
   health {

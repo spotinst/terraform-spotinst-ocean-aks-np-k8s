@@ -15,7 +15,6 @@ module "ocean-aks-np" {
   autoscaler_resource_limits_max_vcpu      = 20000
   autoscaler_resource_limits_max_memory_gib= 100000
   autoscaler_max_scale_down_percentage     = 10
-  autoscaler_headroom_automatic_is_enabled = true
   autoscaler_headroom_automatic_percentage = 5
   health_grace_period                      = 600
   max_pods_per_node                        = 110
@@ -30,5 +29,7 @@ module "ocean-aks-np" {
   availability_zones                       = [1, 2,]
   tags                                     = { "key1": "value1", "key2": "value2" }
   labels                                   = { "labelkey1": "labelvalue1","labelkey2": "labelvalue2"}
+  scheduling_shutdown_hours_time_windows   = ["Sat:08:00-Sun:08:00"]
+  scheduling_shutdown_hours_is_enabled     = true
 }
 
