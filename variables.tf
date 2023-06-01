@@ -122,9 +122,33 @@ variable "labels" {
 }
 variable "scheduling_shutdown_hours_time_windows" {
   type        = list(string)
-  description = ""
+  description = "The times that the shutdown hours will apply."
 }
 variable "scheduling_shutdown_hours_is_enabled" {
   type        = bool
+  description = "Flag to enable or disable the shutdown hours mechanism. When False, the mechanism is deactivated, and the cluster remains in its current state."
+}
+variable "vmsizes_filters_min_vcpu" {
+  type        = number
+  description = "Minimum number of vcpus available."
+}
+variable "vmsizes_filters_max_vcpu" {
+  type        = number
+  description = "Maximum number of vcpus available."
+}
+variable "vmsizes_filters_min_memory_gib" {
+  type        = number
+  description = "Minimum amount of Memory (GiB)."
+}
+variable "vmsizes_filters_max_memory_gib" {
+  type        = number
+  description = "Maximum amount of Memory (GiB)."
+}
+variable "vmsizes_filters_architectures" {
+  type        = list(string)
+  description = "The filtered instance types will support at least one of the architectures from this list."
+}
+variable "vmsizes_filters_series" {
+  type        = list(string)
   description = ""
 }

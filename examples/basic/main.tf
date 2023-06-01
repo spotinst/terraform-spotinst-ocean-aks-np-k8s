@@ -31,5 +31,11 @@ module "ocean-aks-np" {
   labels                                   = { "labelkey1": "labelvalue1","labelkey2": "labelvalue2"}
   scheduling_shutdown_hours_time_windows   = ["Sat:08:00-Sun:08:00"]
   scheduling_shutdown_hours_is_enabled     = true
+  vmsizes_filters_min_vcpu=2
+  vmsizes_filters_max_vcpu=16
+  vmsizes_filters_min_memory_gib=10
+  vmsizes_filters_max_memory_gib=18
+  vmsizes_filters_architectures=["D v3"]
+  vmsizes_filters_series=["X86_64"]
 }
 
