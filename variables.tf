@@ -146,7 +146,7 @@ variable "vmsizes_filters_max_memory_gib" {
 }
 variable "vmsizes_filters_architectures" {
   type        = list(string)
-  description = "The filtered instance types will support at least one of the architectures from this list."
+  description = "The filtered virtual machine types will support at least one of the architectures from this list."
 }
 variable "vmsizes_filters_series" {
   type        = list(string)
