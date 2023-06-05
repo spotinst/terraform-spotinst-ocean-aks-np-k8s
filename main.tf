@@ -55,6 +55,16 @@ resource "spotinst_ocean_aks_np" "v2" {
 
   spot_percentage      = var.spot_percentage
   fallback_to_ondemand = var.fallback_to_ondemand
+
+  filters {
+    min_vcpu = var.vmsizes_filters_min_vcpu
+    max_vcpu = var.vmsizes_filters_max_vcpu
+    min_memory_gib = var.vmsizes_filters_min_memory_gib
+    max_memory_gib = var.vmsizes_filters_max_memory_gib
+    architectures = var.vmsizes_filters_architectures
+    series = var.vmsizes_filters_series
+  }
+
   tags=var.tags
   labels=var.labels
 
