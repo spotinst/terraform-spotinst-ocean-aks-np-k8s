@@ -3,9 +3,17 @@
 
 
 
+<a name="v0.4.0"></a>
+## [v0.4.0] (June 5, 2023)
+
+- Spotaut 15081 add vmsize support ([#8](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/8))
+- Spotaut 15081 Added vmSizes support ([#7](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/7))
+
+
 <a name="v0.3.0"></a>
 ## [v0.3.0] (May 29, 2023)
 
+- Changelog Update ([#6](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/6))
 - Added scheduling and removed autoscaler_headroom_automatic_is_enabled ([#5](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/5))
 
 
@@ -25,6 +33,7 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.4.0...HEAD
+[v0.4.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.1.0...v0.2.0
