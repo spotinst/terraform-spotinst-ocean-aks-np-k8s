@@ -35,7 +35,7 @@ module "ocean-aks-np" {
   vmsizes_filters_max_vcpu=16
   vmsizes_filters_min_memory_gib=10
   vmsizes_filters_max_memory_gib=18
-  vmsizes_filters_architectures=["D v3"]
-  vmsizes_filters_series=["X86_64"]
+  vmsizes_filters_series=["D v3"]
+  vmsizes_filters_architectures=["X86_64"]
 }
 
