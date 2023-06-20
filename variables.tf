@@ -57,7 +57,7 @@ variable "autoscaler_headroom_automatic_percentage" {
 variable "health_grace_period" {
   type        = number
   default     = 600
-  description = "he amount of time to wait, in seconds, from the moment the instance has launched until monitoring of its health checks begins."
+  description = "The amount of time to wait, in seconds, from the moment the instance has launched until monitoring of its health checks begins."
 }
 variable "availability_zones" {
   type        = list(string)
