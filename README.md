@@ -133,6 +133,23 @@ No modules.
 | <a name="input_max_pods_per_node"></a> [max\_pods\_per\_node](#input\_max\_pods\_per\_node) | The maximum number of pods per node in an AKS cluster. | `number` | `null` | no |
 | <a name="input_enable_node_public_ip"></a> [enable\_node\_public\_ip](#input\_enable\_node\_public\_ip) | Enable node public IP. | `bool` | `null` | no |
 | <a name="input_os_disk_size_gb"></a> [os\_disk\_size\_gb](#input\_os\_disk\_size\_gb) | The size of the OS disk in GB. | `number` | `null` | no |
+| <a name="input_os_disk_type"></a> [os\_disk\_type](#input\_os\_disk\_type) | The type of the OS disk. | `string` | `null` | no |
+| <a name="input_os_type"></a> [os\_type](#input\_os\_type) | The type of the OS disk. | `string` | `null` | no |
+| <a name="input_node_min_count"></a> [node\_min\_count](#input\_node\_min\_count) | Minimum node count limit. | `number` | `null` | no |
+| <a name="input_node_max_count"></a> [node\_max\_count](#input\_node\_max\_count) | Maximum node count limit. | `number` | `null` | no |
+| <a name="input_spot_percentage"></a> [spot\_percentage](#input\_spot\_percentage) | Percentage of spot VMs to maintain. | `number` | `100` | no |
+| <a name="input_fallback_to_ondemand"></a> [fallback_to_ondemand](#input\_fallback_to_ondemand) | If no spot instance markets are available, enable Ocean to launch on-demand instances instead. | `bool` | `true` | no |
+| <a name="input_taints"></a> [taints](#input\_taints) | taints / toleration. | `list(map(string))` | `null` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags to be added to resources. | ` map(string)` | `null` | no |
+| <a name="input_labels"></a> [labels](#input\_labels) | An array of labels to add to the virtual node group.Only custom user labels are allowed, and not Kubernetes built-in labels or Spot internal labels. | ` map(string)` | `null` | no |
+| <a name="input_scheduling_shutdown_hours_time_windows"></a> [scheduling\_shutdown\_hours\_time\_windows](#input\_scheduling\_shutdown\_hours\_time\_windows) | The times that the shutdown hours will apply. | ` list(string)` | `null` | no |
+| <a name="input_scheduling_shutdown_hours_is_enabled"></a> [scheduling\_shutdown\_hours\_is\_enabled](#input\_scheduling\_shutdown\_hours\_is\_enabled) | Flag to enable or disable the shutdown hours mechanism. When False, the mechanism is deactivated, and the cluster remains in its current state. | `bool` | `null` | no |
+| <a name="input_vmsizes_filters_min_vcpu"></a> [vmsizes\_filters\_min\_vcpu](#input\_vmsizes\_filters\_min\_vcpu) | Minimum number of vcpus available. | `number` | `null` | no |
+| <a name="input_vmsizes_filters_max_vcpu"></a> [vmsizes\_filters\_max\_vcpu](#input\_vmsizes\_filters\_max\_vcpu) | Maximum number of vcpus available. | `number` | `null` | no |
+| <a name="input_vmsizes_filters_min_memory_gib"></a> [vmsizes\_filters\_min\_memory\_gib](#input\_vmsizes\_filters\_min\_memory\_gib) | Minimum amount of Memory (GiB). | `number` | `null` | no |
+| <a name="input_vmsizes_filters_max_memory_gib"></a> [vmsizes\_filters\_max\_memory\_gib](#input\_vmsizes\_filters\_max\_memory\_gib) | Maximum amount of Memory (GiB). | `number` | `null` | no |
+| <a name="input_vmsizes_filters_architectures"></a> [vmsizes\_filters\_architectures](#input\_vmsizes\_filters\_architectures) | The filtered virtual machine types will support at least one of the architectures from this list. | `list(string)` | `null` | no |
+| <a name="input_vmsizes_filters_series"></a> [vmsizes_filters_series](#input\_vmsizes_filters_series) | Vm sizes belonging to a series from the list will be available for scaling | `list(string)` | `null` | no |
 
 
 ## Outputs
