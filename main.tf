@@ -64,6 +64,12 @@ resource "spotinst_ocean_aks_np" "v2" {
     architectures = var.vmsizes_filters_architectures
     series = var.vmsizes_filters_series
   }
+  headrooms {
+    cpu_per_unit    = var.autoscale_headrooms_cpu_per_unit
+    memory_per_unit = var.autoscale_headrooms_memory_per_unit
+    gpu_per_unit    = var.autoscale_headrooms_gpu_per_unit
+    num_of_units    = var.autoscale_headrooms_num_of_units
+  }
 
   tags=var.tags
   labels=var.labels

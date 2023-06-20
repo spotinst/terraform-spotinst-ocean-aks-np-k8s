@@ -152,3 +152,19 @@ variable "vmsizes_filters_series" {
   type        = list(string)
   description = "Vm sizes belonging to a series from the list will be available for scaling"
 }
+variable "autoscale_headrooms_cpu_per_unit" {
+  type        = number
+  description = "Configure the number of CPUs to allocate the headroom. CPUs are denoted in millicores, where 1000 millicores = 1 vCPU."
+}
+variable "autoscale_headrooms_memory_per_unit" {
+  type        = number
+  description = "onfigure the amount of memory (MiB) to allocate the headroom."
+}
+variable "autoscale_headrooms_gpu_per_unit" {
+  type        = number
+  description = "Amont of GPU to allocate for headroom unit."
+}
+variable "autoscale_headrooms_num_of_units" {
+  type        = number
+  description = "The number of units to retain as headroom, where each unit has the defined headroom CPU and memory."
+}
