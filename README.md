@@ -117,7 +117,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_ocean_cluster_name"></a> [ocean\_cluster\_name](#input\_ocean\_cluster\_name) | Add a name for the Ocean cluster | `string` | `null` | yes |
+| <a name="input_ocean_cluster_name"></a> [ocean\_cluster\_name](#input\_ocean\_cluster\_name) | The Ocean cluster. | `string` | `null` | yes |
 | <a name="input_aks_region"></a> [aks\_region](#input\_aks\_region) | The cluster's region | `string` | `null` | yes |
 | <a name="input_controller_cluster_id"></a> [controller\_cluster\_id](#input\_controller\_cluster\_id) | Enter a unique Ocean cluster identifier. Cannot be updated. | `string` | `null` | yes |
 | <a name="input_aks_cluster_name"></a> [aks\_cluster\_name](#input\_aks\_cluster\_name) | The name of the AKS Cluster | `string` | `null` | yes |
@@ -127,20 +127,20 @@ No modules.
 | <a name="input_autoscaler_resource_limits_max_vcpu"></a> [autoscaler\_resource\_limits\_max\_vcpu](#input\_autoscaler\_resource\_limits\_max\_vcpu) | The maximum cpu in vCpu units that can be allocated to the cluster. | `number` | `null` | no |
 | <a name="input_autoscaler_resource_limits_max_memory_gib"></a> [autoscaler\_resource\_limits\_max\_memory\_gib](#input\_autoscaler\_resource\_limits\_max\_memory\_gib) | The maximum memory in GiB units that can be allocated to the cluster. | `number` | `null` | no |
 | <a name="input_autoscaler_max_scale_down_percentage"></a> [autoscaler\_max\_scale\_down\_percentage](#input\_autoscaler\_max\_scale\_down\_percentage) | The maximum percentage allowed to scale down in a single scaling action. | `number` | `null` | no |
-| <a name="input_autoscaler_headroom_automatic_percentage"></a> [autoscaler\_headroom\_automatic\_percentage](#input\_autoscaler\_headroom\_automatic\_percentage) | Optionally set a number between 0-100 to control the percentage of total cluster resources dedicated to headroom. Relevant when isEnabled=true. | `number` | `null` | no |
+| <a name="input_autoscaler_headroom_automatic_percentage"></a> [autoscaler\_headroom\_automatic\_percentage](#input\_autoscaler\_headroom\_automatic\_percentage) | Optionally set a number between 0-100 to control the percentage of total cluster resources dedicated to headroom. | `number` | `null` | no |
 | <a name="input_health_grace_period"></a> [health\_grace\_period](#input\_health\_grace\_period) | The amount of time to wait, in seconds, from the moment the instance has launched until monitoring of its health checks begins. | `number` | `600` | no |
-| <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | TAn Array holding Availability Zones, this configures the availability zones the Ocean may launch instances in per VNG. | `list(string)` | `null` | no |
-| <a name="input_max_pods_per_node"></a> [max\_pods\_per\_node](#input\_max\_pods\_per\_node) | The maximum number of pods per node in an AKS cluster. | `number` | `null` | no |
+| <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | An Array holding Availability Zones, this configures the availability zones the Ocean may launch instances in per VNG. | `list(string)` | `null` | no |
+| <a name="input_max_pods_per_node"></a> [max\_pods\_per\_node](#input\_max\_pods\_per\_node) | he maximum number of pods per node in the node pools. | `number` | `null` | no |
 | <a name="input_enable_node_public_ip"></a> [enable\_node\_public\_ip](#input\_enable\_node\_public\_ip) | Enable node public IP. | `bool` | `null` | no |
 | <a name="input_os_disk_size_gb"></a> [os\_disk\_size\_gb](#input\_os\_disk\_size\_gb) | The size of the OS disk in GB. | `number` | `null` | no |
 | <a name="input_os_disk_type"></a> [os\_disk\_type](#input\_os\_disk\_type) | The type of the OS disk. | `string` | `null` | no |
-| <a name="input_os_type"></a> [os\_type](#input\_os\_type) | The type of the OS disk. | `string` | `null` | no |
+| <a name="input_os_type"></a> [os\_type](#input\_os\_type) | The OS type of the OS disk. | `string` | `null` | no |
 | <a name="input_node_min_count"></a> [node\_min\_count](#input\_node\_min\_count) | Minimum node count limit. | `number` | `null` | no |
 | <a name="input_node_max_count"></a> [node\_max\_count](#input\_node\_max\_count) | Maximum node count limit. | `number` | `null` | no |
 | <a name="input_spot_percentage"></a> [spot\_percentage](#input\_spot\_percentage) | Percentage of spot VMs to maintain. | `number` | `100` | no |
 | <a name="input_fallback_to_ondemand"></a> [fallback_to_ondemand](#input\_fallback_to_ondemand) | If no spot instance markets are available, enable Ocean to launch on-demand instances instead. | `bool` | `true` | no |
-| <a name="input_taints"></a> [taints](#input\_taints) | taints / toleration. | `list(map(string))` | `null` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | Tags to be added to resources. | ` map(string)` | `null` | no |
+| <a name="input_taints"></a> [taints](#input\_taints) | Add taints to a virtual node group. | `list(map(string))` | `null` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | A maximum of 10 unique key-value pairs for VM tags in the virtual node group. | ` map(string)` | `null` | no |
 | <a name="input_labels"></a> [labels](#input\_labels) | An array of labels to add to the virtual node group.Only custom user labels are allowed, and not Kubernetes built-in labels or Spot internal labels. | ` map(string)` | `null` | no |
 | <a name="input_scheduling_shutdown_hours_time_windows"></a> [scheduling\_shutdown\_hours\_time\_windows](#input\_scheduling\_shutdown\_hours\_time\_windows) | The times that the shutdown hours will apply. | ` list(string)` | `null` | no |
 | <a name="input_scheduling_shutdown_hours_is_enabled"></a> [scheduling\_shutdown\_hours\_is\_enabled](#input\_scheduling\_shutdown\_hours\_is\_enabled) | Flag to enable or disable the shutdown hours mechanism. When False, the mechanism is deactivated, and the cluster remains in its current state. | `bool` | `null` | no |
