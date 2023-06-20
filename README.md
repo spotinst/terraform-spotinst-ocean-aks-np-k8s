@@ -108,6 +108,41 @@ We use GitHub issues for tracking bugs and feature requests. Please use these co
 
 Please see the [contribution guidelines](.github/CONTRIBUTING.md).
 
+## Modules
+
+No modules.
+
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_ocean_cluster_name"></a> [ocean\_cluster\_name](#input\_ocean\_cluster\_name) | Add a name for the Ocean cluster | `string` | `null` | yes |
+| <a name="input_aks_region"></a> [aks\_region](#input\_aks\_region) | The cluster's region | `string` | `null` | yes |
+| <a name="input_controller_cluster_id"></a> [controller\_cluster\_id](#input\_controller\_cluster\_id) | Enter a unique Ocean cluster identifier. Cannot be updated. | `string` | `null` | yes |
+| <a name="input_aks_cluster_name"></a> [aks\_cluster\_name](#input\_aks\_cluster\_name) | The name of the AKS Cluster | `string` | `null` | yes |
+| <a name="input_aks_infrastructure_resource_group_name"></a> [aks\_infrastructure\_resource\_group\_name](#input\_aks\_infrastructure\_resource\_group\_name) | The name of the cluster's infrastructure resource group. | `string` | `null` | yes |
+| <a name="input_aks_resource_group_name"></a> [aks\_resource\_group\_name](#input\_aks\_resource\_group\_name) | The name of the cluster's resource group. | `string` | `null` | yes |
+| <a name="input_autoscaler_is_enabled"></a> [autoscaler\_is\_enabled](#input\_autoscaler\_is\_enabled) | Enable the Ocean Kubernetes Autoscaler. | `bool` | `true` | yes |
+| <a name="input_autoscaler_resource_limits_max_vcpu"></a> [autoscaler\_resource\_limits\_max\_vcpu](#input\_autoscaler\_resource\_limits\_max\_vcpu) | The maximum cpu in vCpu units that can be allocated to the cluster. | `number` | `null` | no |
+| <a name="input_autoscaler_resource_limits_max_memory_gib"></a> [autoscaler\_resource\_limits\_max\_memory\_gib](#input\_autoscaler\_resource\_limits\_max\_memory\_gib) | The maximum memory in GiB units that can be allocated to the cluster. | `number` | `null` | no |
+| <a name="input_autoscaler_max_scale_down_percentage"></a> [autoscaler\_max\_scale\_down\_percentage](#input\_autoscaler\_max\_scale\_down\_percentage) | The maximum percentage allowed to scale down in a single scaling action. | `number` | `null` | no |
+| <a name="input_autoscaler_headroom_automatic_percentage"></a> [autoscaler\_headroom\_automatic\_percentage](#input\_autoscaler\_headroom\_automatic\_percentage) | Optionally set a number between 0-100 to control the percentage of total cluster resources dedicated to headroom. Relevant when isEnabled=true. | `number` | `null` | no |
+| <a name="input_health_grace_period"></a> [health\_grace\_period](#input\_health\_grace\_period) | The amount of time to wait, in seconds, from the moment the instance has launched until monitoring of its health checks begins. | `number` | `600` | no |
+| <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | TAn Array holding Availability Zones, this configures the availability zones the Ocean may launch instances in per VNG. | `list(string)` | `null` | no |
+| <a name="input_max_pods_per_node"></a> [max\_pods\_per\_node](#input\_max\_pods\_per\_node) | The maximum number of pods per node in an AKS cluster. | `number` | `null` | no |
+| <a name="input_enable_node_public_ip"></a> [enable\_node\_public\_ip](#input\_enable\_node\_public\_ip) | Enable node public IP. | `bool` | `null` | no |
+| <a name="input_os_disk_size_gb"></a> [os\_disk\_size\_gb](#input\_os\_disk\_size\_gb) | The size of the OS disk in GB. | `number` | `null` | no |
+
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+
+| <a name="output_ocean_id"></a> [ocean\_id](#output\_ocean\_id) | The Ocean cluster ID |
+<!-- END_TF_DOCS -->
+
 ## License
 
 Code is licensed under the [Apache License 2.0](LICENSE).

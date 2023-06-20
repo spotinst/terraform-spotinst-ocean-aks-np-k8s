@@ -33,7 +33,7 @@ variable "aks_resource_group_name" {
   description = "Required on cluster.aks object."
 }
 variable "autoscaler_is_enabled" {
-  type        = string
+  type        = bool
   default     = true
   description = "Enable the Ocean Kubernetes Autoscaler."
 }
@@ -57,7 +57,7 @@ variable "autoscaler_headroom_automatic_percentage" {
 variable "health_grace_period" {
   type        = number
   default     = 600
-  description = "Optionally set a number between 0-100 to control the percentage of total cluster resources dedicated to headroom. Relevant when isEnabled=true."
+  description = "he amount of time to wait, in seconds, from the moment the instance has launched until monitoring of its health checks begins."
 }
 variable "availability_zones" {
   type        = list(string)
@@ -150,5 +150,5 @@ variable "vmsizes_filters_architectures" {
 }
 variable "vmsizes_filters_series" {
   type        = list(string)
-  description = ""
+  description = "Vm sizes belonging to a series from the list will be available for scaling"
 }
