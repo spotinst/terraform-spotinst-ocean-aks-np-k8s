@@ -10,11 +10,11 @@ variable "spotinst_account" {
 }
 variable "ocean_cluster_name" {
   type        = string
-  description = "Add a name for the Ocean cluster"
+  description = "The Ocean cluster."
 }
 variable "aks_region" {
   type        = string
-  description = "Required on cluster.aks object."
+  description = "The cluster's region."
 }
 variable "controller_cluster_id" {
   type        = string
@@ -22,15 +22,15 @@ variable "controller_cluster_id" {
 }
 variable "aks_cluster_name" {
   type        = string
-  description = "Required on cluster.aks object"
+  description = "The name of the AKS Cluster."
 }
 variable "aks_infrastructure_resource_group_name" {
   type        = string
-  description = "Required on cluster.aks object."
+  description = "The name of the cluster's infrastructure resource group."
 }
 variable "aks_resource_group_name" {
   type        = string
-  description = "Required on cluster.aks object."
+  description = "The name of the cluster's resource group."
 }
 variable "autoscaler_is_enabled" {
   type        = bool
@@ -52,7 +52,7 @@ variable "autoscaler_max_scale_down_percentage" {
 
 variable "autoscaler_headroom_automatic_percentage" {
   type        = number
-  description = "Optionally set a number between 0-100 to control the percentage of total cluster resources dedicated to headroom. Relevant when isEnabled=true."
+  description = "Optionally set a number between 0-100 to control the percentage of total cluster resources dedicated to headroom."
 }
 variable "health_grace_period" {
   type        = number
@@ -108,17 +108,17 @@ variable "taints" {
     effect = string
   }))
   default     = null
-  description = "taints / toleration"
+  description = "Add taints to a virtual node group."
 }
 variable "tags" {
   type        = map(string)
   default     = null
-  description = "Tags to be added to resources"
+  description = "A maximum of 10 unique key-value pairs for VM tags in the virtual node group."
 }
 variable "labels" {
   type        = map(string)
   default     = null
-  description = "An array of labels to add to the virtual node group.Only custom user labels are allowed, and not Kubernetes built-in labels or Spot internal labels."
+  description = "An Array holding Availability Zones, this configures the availability zones the Ocean may launch instances in per VNG."
 }
 variable "scheduling_shutdown_hours_time_windows" {
   type        = list(string)
@@ -146,7 +146,7 @@ variable "vmsizes_filters_max_memory_gib" {
 }
 variable "vmsizes_filters_architectures" {
   type        = list(string)
-  description = "The filtered virtual machine types will support at least one of the architectures from this list."
+  description = "The filtered vm sizes will support at least one of the architectures from this list. x86_64 includes both intel64 and amd64."
 }
 variable "vmsizes_filters_series" {
   type        = list(string)
