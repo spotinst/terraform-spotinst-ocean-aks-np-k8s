@@ -162,6 +162,10 @@ No modules.
 | <a name="input_vmsizes_filters_max_memory_gib"></a> [vmsizes\_filters\_max\_memory\_gib](#input\_vmsizes\_filters\_max\_memory\_gib) | Maximum amount of Memory (GiB). | `number` | `null` | no |
 | <a name="input_vmsizes_filters_architectures"></a> [vmsizes\_filters\_architectures](#input\_vmsizes\_filters\_architectures) | The filtered virtual machine types will support at least one of the architectures from this list. | `list(string)` | `null` | no |
 | <a name="input_vmsizes_filters_series"></a> [vmsizes_filters_series](#input\_vmsizes_filters_series) | Vm sizes belonging to a series from the list will be available for scaling | `list(string)` | `null` | no |
+| <a name="input_autoscale_headrooms_num_of_units"></a> [autoscale\_headrooms\_num\_of\_units](#input\_autoscale\_headrooms\_num\_of\_units) | The number of units to retain as headroom, where each unit has the defined headroom CPU, memory. | `number` | `null` | no |
+| <a name="input_autoscale_headrooms_cpu_per_unit"></a> [autoscale\_headrooms\_cpu\_per\_unit](#input\_autoscale\_headrooms\_cpu\_per\_unit) | Configure the number of CPUs to allocate for each headroom unit. CPUs are denoted in millicores, where 1000 millicores = 1 vCPU. | `number` | `null` | no |
+| <a name="input_autoscale_headrooms_gpu_per_unit"></a> [autoscale\_headrooms\_gpu\_per\_unit](#input\_autoscale\_headrooms\_gpu\_per\_unit) | Amont of GPU to allocate for headroom unit. | `number` | `null` | no |
+| <a name="input_autoscale_headrooms_memory_per_unit"></a> [autoscale\_headrooms\_memory\_per\_unit](#input\_autoscale\_headrooms\_memory\_per\_unit) | Configure the amount of memory (MiB) to allocate the headroom | `number` | `null` | no |
 
 
 ## Outputs
