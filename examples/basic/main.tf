@@ -1,8 +1,8 @@
 module "ocean-aks-np" {
   source = "../.."
   # Credentials.
-  spotinst_token                          = var.spotinst_token
-  spotinst_account                        = var.spotinst_account
+  spotinst_token                          = "your-token"
+  spotinst_account                        = "your-account"
 
   # Configuration
   ocean_cluster_name                       = "test"
