@@ -19,7 +19,7 @@ module "ocean-aks-np" {
   health_grace_period                      = 600
   max_pods_per_node                        = 30
   enable_node_public_ip                    = true
-  os_disk_size_gb                          = 30
+  os_disk_size_gb                          = 32
   os_disk_type                             = "Managed"
   os_type                                  = "Linux"
   node_min_count                           = 1

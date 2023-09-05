@@ -75,7 +75,7 @@ variable "max_pods_per_node" {
 }
 variable "enable_node_public_ip" {
   type        = bool
-  default     = false
+  default     = null
   description = "enable node public IP."
 }
 variable "os_disk_size_gb" {
@@ -138,7 +138,7 @@ variable "scheduling_shutdown_hours_time_windows" {
 }
 variable "scheduling_shutdown_hours_is_enabled" {
   type        = bool
-  default     = false
+  default     = null
   description = "Flag to enable or disable the shutdown hours mechanism. When False, the mechanism is deactivated, and the cluster remains in its current state."
 }
 variable "vmsizes_filters_min_vcpu" {
