@@ -65,7 +65,6 @@ variable "health_grace_period" {
 }
 variable "availability_zones" {
   type        = list(string)
-  default     = []
   description = "An Array holding Availability Zones, this configures the availability zones the Ocean may launch instances in per VNG."
 }
 variable "max_pods_per_node" {
@@ -85,11 +84,12 @@ variable "os_disk_size_gb" {
 }
 variable "os_disk_type" {
   type        = string
+  default     = null
   description = "The type of the OS disk."
 }
 variable "os_type" {
   type        = string
-  default     = ""
+  default     = null
   description = "The os type of the os disk."
 }
 variable "node_min_count" {
@@ -131,16 +131,6 @@ variable "labels" {
   default     = null
   description = "An Array holding Availability Zones, this configures the availability zones the Ocean may launch instances in per VNG."
 }
-variable "scheduling_shutdown_hours_time_windows" {
-  type        = list(string)
-  default     = []
-  description = "The times that the shutdown hours will apply."
-}
-variable "scheduling_shutdown_hours_is_enabled" {
-  type        = bool
-  default     = null
-  description = "Flag to enable or disable the shutdown hours mechanism. When False, the mechanism is deactivated, and the cluster remains in its current state."
-}
 variable "vmsizes_filters_min_vcpu" {
   type        = number
   default     = null
@@ -163,12 +153,12 @@ variable "vmsizes_filters_max_memory_gib" {
 }
 variable "vmsizes_filters_architectures" {
   type        = list(string)
-  default = []
+  default = null
   description = "The filtered vm sizes will support at least one of the architectures from this list. x86_64 includes both intel64 and amd64."
 }
 variable "vmsizes_filters_series" {
   type        = list(string)
-  default = []
+  default = null
   description = "Vm sizes belonging to a series from the list will be available for scaling"
 }
 variable "autoscale_headrooms_cpu_per_unit" {
@@ -190,4 +180,12 @@ variable "autoscale_headrooms_num_of_units" {
   type        = number
   default     = null
   description = "The number of units to retain as headroom, where each unit has the defined headroom CPU and memory."
+}
+variable "shutdown_hours" {
+  type = object({
+    is_enabled   = bool
+    time_windows = list(string)
+  })
+  default     = null
+  description = "shutdown_hours object"
 }

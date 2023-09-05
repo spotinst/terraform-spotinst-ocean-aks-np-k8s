@@ -33,8 +33,6 @@ module "ocean-aks-np" {
   availability_zones                       = ["1", "2", "3"]
   tags                                     = { "tagKey": "env", "tagValue": "staging" }
   labels                                   = { "key": "env","value": "test"}
-  scheduling_shutdown_hours_time_windows   = ["Sat:08:00-Sun:08:00"]
-  scheduling_shutdown_hours_is_enabled     = true
   taints                                   = [{"key":"taintKey","value":"taintValue", "effect" : "NoSchedule"}]
   vmsizes_filters_min_vcpu                 = 2
   vmsizes_filters_max_vcpu                 = 16
@@ -42,5 +40,6 @@ module "ocean-aks-np" {
   vmsizes_filters_max_memory_gib           = 18
   vmsizes_filters_series                   = ["D v3", "Dds_v4", "Dsv2"]
   vmsizes_filters_architectures            = ["X86_64"]
+  shutdown_hours                           = { is_enabled = false time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30",] }
 }
 
