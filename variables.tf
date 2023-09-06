@@ -39,19 +39,23 @@ variable "autoscaler_is_enabled" {
 }
 variable "autoscaler_resource_limits_max_vcpu" {
   type        = number
+  default     = null
   description = "The maximum cpu in vCpu units that can be allocated to the cluster."
 }
 variable "autoscaler_resource_limits_max_memory_gib" {
   type        = number
+  default     = null
   description = "The maximum memory in GiB units that can be allocated to the cluster."
 }
 variable "autoscaler_max_scale_down_percentage" {
   type        = number
+  default     = null
   description = "The maximum percentage allowed to scale down in a single scaling action."
 }
 
 variable "autoscaler_headroom_automatic_percentage" {
   type        = number
+  default     = null
   description = "Optionally set a number between 0-100 to control the percentage of total cluster resources dedicated to headroom."
 }
 variable "health_grace_period" {
@@ -65,30 +69,37 @@ variable "availability_zones" {
 }
 variable "max_pods_per_node" {
   type        = number
+  default     = null
   description = "The maximum number of pods per node in an AKS cluster."
 }
 variable "enable_node_public_ip" {
   type        = bool
+  default     = null
   description = "enable node public IP."
 }
 variable "os_disk_size_gb" {
   type        = number
+  default     = null
   description = "The size of the OS disk in GB."
 }
 variable "os_disk_type" {
   type        = string
+  default     = null
   description = "The type of the OS disk."
 }
 variable "os_type" {
   type        = string
+  default     = null
   description = "The os type of the os disk."
 }
 variable "node_min_count" {
   type        = number
+  default     = null
   description = "Minimum node count limit."
 }
 variable "node_max_count" {
   type        = number
+  default     = null
   description = "Maximum node count limit."
 }
 variable "spot_percentage" {
@@ -120,51 +131,61 @@ variable "labels" {
   default     = null
   description = "An Array holding Availability Zones, this configures the availability zones the Ocean may launch instances in per VNG."
 }
-variable "scheduling_shutdown_hours_time_windows" {
-  type        = list(string)
-  description = "The times that the shutdown hours will apply."
-}
-variable "scheduling_shutdown_hours_is_enabled" {
-  type        = bool
-  description = "Flag to enable or disable the shutdown hours mechanism. When False, the mechanism is deactivated, and the cluster remains in its current state."
-}
 variable "vmsizes_filters_min_vcpu" {
   type        = number
+  default     = null
   description = "Minimum number of vcpus available."
 }
 variable "vmsizes_filters_max_vcpu" {
   type        = number
+  default     = null
   description = "Maximum number of vcpus available."
 }
 variable "vmsizes_filters_min_memory_gib" {
   type        = number
+  default     = null
   description = "Minimum amount of Memory (GiB)."
 }
 variable "vmsizes_filters_max_memory_gib" {
   type        = number
+  default     = null
   description = "Maximum amount of Memory (GiB)."
 }
 variable "vmsizes_filters_architectures" {
   type        = list(string)
+  default = null
   description = "The filtered vm sizes will support at least one of the architectures from this list. x86_64 includes both intel64 and amd64."
 }
 variable "vmsizes_filters_series" {
   type        = list(string)
+  default = null
   description = "Vm sizes belonging to a series from the list will be available for scaling"
 }
 variable "autoscale_headrooms_cpu_per_unit" {
   type        = number
+  default     = null
   description = "Configure the number of CPUs to allocate the headroom. CPUs are denoted in millicores, where 1000 millicores = 1 vCPU."
 }
 variable "autoscale_headrooms_memory_per_unit" {
   type        = number
+  default     = null
   description = "onfigure the amount of memory (MiB) to allocate the headroom."
 }
 variable "autoscale_headrooms_gpu_per_unit" {
   type        = number
+  default     = null
   description = "Amont of GPU to allocate for headroom unit."
 }
 variable "autoscale_headrooms_num_of_units" {
   type        = number
+  default     = null
   description = "The number of units to retain as headroom, where each unit has the defined headroom CPU and memory."
+}
+variable "shutdown_hours" {
+  type = object({
+    is_enabled   = bool
+    time_windows = list(string)
+  })
+  default     = null
+  description = "shutdown_hours object"
 }
