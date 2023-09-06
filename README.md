@@ -76,8 +76,7 @@ module "ocean-aks-np" {
   availability_zones                       = [1, 2, 3]
   tags                                     = { "tagKey": "env", "tagValue": "staging" }
   labels                                   = { "key": "env","value": "test"}
-  scheduling_shutdown_hours_time_windows   = ["Sat:08:00-Sun:08:00"]
-  scheduling_shutdown_hours_is_enabled     = true
+  shutdown_hours                           = { is_enabled = false time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30",] }
   taints                                   = [{"key":"taintKey","value":"taintValue", "effect" : "NoSchedule"}]
   vmsizes_filters_min_vcpu                 = 2
   vmsizes_filters_max_vcpu                 = 16
@@ -156,6 +155,7 @@ No modules.
 | <a name="input_labels"></a> [labels](#input\_labels) | An array of labels to add to the virtual node group.Only custom user labels are allowed, and not Kubernetes built-in labels or Spot internal labels. | ` map(string)` | `null` | no |
 | <a name="input_scheduling_shutdown_hours_time_windows"></a> [scheduling\_shutdown\_hours\_time\_windows](#input\_scheduling\_shutdown\_hours\_time\_windows) | The times that the shutdown hours will apply. | ` list(string)` | `null` | no |
 | <a name="input_scheduling_shutdown_hours_is_enabled"></a> [scheduling\_shutdown\_hours\_is\_enabled](#input\_scheduling\_shutdown\_hours\_is\_enabled) | Flag to enable or disable the shutdown hours mechanism. When False, the mechanism is deactivated, and the cluster remains in its current state. | `bool` | `null` | no |
+| <a name="input_shutdown_hours"></a> [shutdown\_hours](#input\_shutdown\_hours) | shutdown_hours object. | `object` | `null` | no |
 | <a name="input_vmsizes_filters_min_vcpu"></a> [vmsizes\_filters\_min\_vcpu](#input\_vmsizes\_filters\_min\_vcpu) | Minimum number of vcpus available. | `number` | `null` | no |
 | <a name="input_vmsizes_filters_max_vcpu"></a> [vmsizes\_filters\_max\_vcpu](#input\_vmsizes\_filters\_max\_vcpu) | Maximum number of vcpus available. | `number` | `null` | no |
 | <a name="input_vmsizes_filters_min_memory_gib"></a> [vmsizes\_filters\_min\_memory\_gib](#input\_vmsizes\_filters\_min\_memory\_gib) | Minimum amount of Memory (GiB). | `number` | `null` | no |
