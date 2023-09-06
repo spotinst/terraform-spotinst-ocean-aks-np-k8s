@@ -3,9 +3,18 @@
 
 
 
+<a name="v0.6.0"></a>
+## [v0.6.0] (September 6, 2023)
+
+- Updated shutdown_hours details and usage in document. ([#13](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/13))
+- Added default value in variable.tf ([#12](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/12))
+- [src] removed common workflow
+
+
 <a name="v0.5.0"></a>
 ## [v0.5.0] (June 21, 2023)
 
+- Changelog for 0.5.0 Version ([#11](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/11))
 - Added documentation for ocean_aks_np cluster ([#10](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/10))
 - [src] added common workflow
 
@@ -41,7 +50,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.0...HEAD
+[v0.6.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.5.0...v0.6.0
 [v0.5.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.4.0...v0.5.0
 [v0.4.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.2.0...v0.3.0
