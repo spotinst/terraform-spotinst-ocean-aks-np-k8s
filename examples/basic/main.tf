@@ -40,6 +40,7 @@ module "ocean-aks-np" {
   vmsizes_filters_max_memory_gib           = 18
   vmsizes_filters_series                   = ["D v3", "Dds_v4", "Dsv2"]
   vmsizes_filters_architectures            = ["X86_64"]
-  shutdown_hours                           = { is_enabled = false time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30",] }
+  shutdown_hours                           = { is_enabled = false
+                                               time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30"] }
 }
 

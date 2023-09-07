@@ -76,7 +76,8 @@ module "ocean-aks-np" {
   availability_zones                       = [1, 2, 3]
   tags                                     = { "tagKey": "env", "tagValue": "staging" }
   labels                                   = { "key": "env","value": "test"}
-  shutdown_hours                           = { is_enabled = false time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30",] }
+  shutdown_hours                           = { is_enabled = false 
+                                               time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30"] }
   taints                                   = [{"key":"taintKey","value":"taintValue", "effect" : "NoSchedule"}]
   vmsizes_filters_min_vcpu                 = 2
   vmsizes_filters_max_vcpu                 = 16
