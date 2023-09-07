@@ -48,7 +48,7 @@ module "ocean-aks-np" {
   spotinst_account                        = var.spotinst_account
 
   # Configuration
-  ocean_cluster_name                       = "test"
+  ocean_cluster_name                       = "ocean-cluster-name"
   aks_region                               = "eastus"
   controller_cluster_id                    = "test-123124"
   aks_cluster_name                         = "test-cluster"
