@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.6.3"></a>
+## [v0.6.3] (September 29, 2023)
+
+- added support for `os_sku` ([#19](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/19))
+
+
 <a name="v0.6.2"></a>
 ## [v0.6.2] (September 7, 2023)
 
+- changelog - 0.6.2 ([#18](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/18))
 - updated shutdown_hours in example and documentation ([#17](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/17))
 - Revert "updated cluster name in documentation ([#15](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/15))" ([#16](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/16))
 - updated cluster name in documentation ([#15](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/15))
@@ -64,7 +71,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.2...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.3...HEAD
+[v0.6.3]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.2...v0.6.3
 [v0.6.2]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.1...v0.6.2
 [v0.6.1]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.0...v0.6.1
 [v0.6.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.5.0...v0.6.0
