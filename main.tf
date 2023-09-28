@@ -47,12 +47,13 @@ resource "spotinst_ocean_aks_np" "v2" {
   health {
     grace_period = var.health_grace_period
   }
-  availability_zones = var.availability_zones
+  availability_zones    = var.availability_zones
   max_pods_per_node     = var.max_pods_per_node
   enable_node_public_ip = var.enable_node_public_ip
   os_disk_size_gb       = var.os_disk_size_gb
-  os_disk_type         = var.os_disk_type
-  os_type             = var.os_type
+  os_disk_type          = var.os_disk_type
+  os_type               = var.os_type
+  os_sku                = var.os_sku
 
   min_count = var.node_min_count
   max_count = var.node_max_count

@@ -22,6 +22,7 @@ module "ocean-aks-np" {
   os_disk_size_gb                          = 32
   os_disk_type                             = "Managed"
   os_type                                  = "Linux"
+  os_sku                                   = "Ubuntu"
   node_min_count                           = 1
   node_max_count                           = 100
   spot_percentage                          = 50
@@ -40,7 +41,7 @@ module "ocean-aks-np" {
   vmsizes_filters_max_memory_gib           = 18
   vmsizes_filters_series                   = ["D v3", "Dds_v4", "Dsv2"]
   vmsizes_filters_architectures            = ["X86_64"]
-  shutdown_hours                           = { is_enabled = false
+  shutdown_hours                           = { is_enabled = false,
                                                time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30"] }
 }
 
