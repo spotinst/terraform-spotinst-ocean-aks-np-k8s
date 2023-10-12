@@ -97,6 +97,21 @@ variable "os_sku" {
   default     = null
   description = "The OS SKU of the OS type. Must correlate with the os type."
 }
+variable "kubernetes_version" {
+  type        = string
+  default     = null
+  description = "The desired Kubernetes version of the launched nodes. In case the value is null, the Kubernetes version of the control plane is used."
+}
+variable "pod_subnet_ids" {
+  type        = list(string)
+  default     = null
+  description = "The IDs of subnets in an existing VNet into which to assign pods in the cluster (requires azure network-plugin)."
+}
+variable "vnet_subnet_ids" {
+  type        = list(string)
+  default     = null
+  description = "The IDs of subnets in an existing VNet into which to assign nodes in the cluster (requires azure network-plugin)."
+}
 variable "node_min_count" {
   type        = number
   default     = null
@@ -158,12 +173,12 @@ variable "vmsizes_filters_max_memory_gib" {
 }
 variable "vmsizes_filters_architectures" {
   type        = list(string)
-  default = null
+  default     = null
   description = "The filtered vm sizes will support at least one of the architectures from this list. x86_64 includes both intel64 and amd64."
 }
 variable "vmsizes_filters_series" {
   type        = list(string)
-  default = null
+  default     = null
   description = "Vm sizes belonging to a series from the list will be available for scaling"
 }
 variable "autoscale_headrooms_cpu_per_unit" {
