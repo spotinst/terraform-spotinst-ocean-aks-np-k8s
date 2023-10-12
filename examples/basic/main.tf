@@ -23,6 +23,9 @@ module "ocean-aks-np" {
   os_disk_type                             = "Managed"
   os_type                                  = "Linux"
   os_sku                                   = "Ubuntu"
+  kubernetes_version                       = "1.26"
+  pod_subnet_ids                           = ["/subscriptions/123456-1234-1234-1234-123456789/resourceGroups/ExampleResourceGroup/providers/Microsoft.Network/virtualNetworks/ExampleVirtualNetwork/subnets/default"]
+  vnet_subnet_ids                          = ["/subscriptions/123456-1234-1234-1234-123456789/resourceGroups/ExampleResourceGroup/providers/Microsoft.Network/virtualNetworks/ExampleVirtualNetwork/subnets/default"]
   node_min_count                           = 1
   node_max_count                           = 100
   spot_percentage                          = 50
