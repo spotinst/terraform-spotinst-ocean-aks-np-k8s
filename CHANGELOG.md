@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.8.0"></a>
+## [v0.8.0] (October 20, 2023)
+
+- feat(ocean/aks-np): added `accelerated_networking`, `disk_performance`, `min_gpu`, `max_gpu`, `min_nics`, `min_data` and `vm_types` fields ([#23](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/23))
+
+
 <a name="v0.7.0"></a>
 ## [v0.7.0] (October 12, 2023)
 
+- changelog v0.7.0 ([#22](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/22))
 - feat (ocean/aks-np): added `pod_subnet_ids` and `vnet_subnet_ids` fields ([#21](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/21))
 
 
@@ -78,7 +85,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.8.0...HEAD
+[v0.8.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.7.0...v0.8.0
 [v0.7.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.3...v0.7.0
 [v0.6.3]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.2...v0.6.3
 [v0.6.2]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.1...v0.6.2
