@@ -51,7 +51,7 @@ module "ocean-aks-np" {
   #vmsizes_filters_max_gpu                  = 2
   vmsizes_filters_min_nics                 = 1
   vmsizes_filters_vm_types                 = ["generalPurpose"]
-  vmsizes_filters_min_data                 = 1
+  vmsizes_filters_min_disk                 = 1
   shutdown_hours                           = { is_enabled = false,
                                                time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30"] }
 }
