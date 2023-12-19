@@ -15,6 +15,7 @@ module "ocean-aks-np" {
   autoscaler_resource_limits_max_vcpu      = 750
   autoscaler_resource_limits_max_memory_gib= 1500
   autoscaler_max_scale_down_percentage     = 30
+  autoscaler_headroom_automatic_is_enabled = true
   autoscaler_headroom_automatic_percentage = 5
   health_grace_period                      = 600
   max_pods_per_node                        = 30

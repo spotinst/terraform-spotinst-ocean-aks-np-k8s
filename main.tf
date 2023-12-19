@@ -27,6 +27,7 @@ resource "spotinst_ocean_aks_np" "v2" {
     autoscale_headroom {
 
       automatic {
+        is_enabled = var.autoscaler_headroom_automatic_is_enabled
         percentage = var.autoscaler_headroom_automatic_percentage
       }
 

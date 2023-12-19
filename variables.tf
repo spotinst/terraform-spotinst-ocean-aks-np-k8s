@@ -52,7 +52,11 @@ variable "autoscaler_max_scale_down_percentage" {
   default     = null
   description = "The maximum percentage allowed to scale down in a single scaling action."
 }
-
+variable "autoscaler_headroom_automatic_is_enabled" {
+  type        = bool
+  default     = false
+  description = "Enable automatic headroom. When set to True, Ocean configures and optimizes headroom automatically."
+}
 variable "autoscaler_headroom_automatic_percentage" {
   type        = number
   default     = null
