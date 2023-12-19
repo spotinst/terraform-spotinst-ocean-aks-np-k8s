@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.10.0"></a>
+## [v0.10.0] (December 19, 2023)
+
+- ocean (aks-np): added `is_enabled` attribute for `auto_scaler_headroom_automatic` ([#27](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/27))
+
+
 <a name="v0.9.0"></a>
 ## [v0.9.0] (November 12, 2023)
 
+- changelog_v0.9.0 ([#26](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/26))
 - fix (ocean/aks-np): modified the name of `min_disk` attribute from `min_data` ([#25](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/25))
 
 
@@ -92,7 +99,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.9.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.10.0...HEAD
+[v0.10.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.9.0...v0.10.0
 [v0.9.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.8.0...v0.9.0
 [v0.8.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.7.0...v0.8.0
 [v0.7.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.3...v0.7.0
