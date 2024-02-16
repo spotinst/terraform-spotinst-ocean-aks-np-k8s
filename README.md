@@ -91,7 +91,9 @@ module "ocean-aks-np" {
   vmsizes_filters_series                   = ["D v3", "Dds_v4", "Dsv2"]
   vmsizes_filters_architectures            = ["X86_64"]
   should_roll                              = true
-  batch_size_percentage                    = 33
+  conditioned_roll                         = false
+  batch_size_percentage                    = 25
+  batch_min_healthy_percentage             = 100
 }
 ```
 
@@ -187,7 +189,7 @@ No modules.
 | <a name="input_autoscale_headrooms_cpu_per_unit"></a> [autoscale\_headrooms\_cpu\_per\_unit](#input\_autoscale\_headrooms\_cpu\_per\_unit)                              | Configure the number of CPUs to allocate for each headroom unit. CPUs are denoted in millicores, where 1000 millicores = 1 vCPU.                     | `number`            | `null`  |    no     |
 | <a name="input_autoscale_headrooms_gpu_per_unit"></a> [autoscale\_headrooms\_gpu\_per\_unit](#input\_autoscale\_headrooms\_gpu\_per\_unit)                              | Amont of GPU to allocate for headroom unit.                                                                                                          | `number`            | `null`  |    no     |
 | <a name="input_autoscale_headrooms_memory_per_unit"></a> [autoscale\_headrooms\_memory\_per\_unit](#input\_autoscale\_headrooms\_memory\_per\_unit)                     | Configure the amount of memory (MiB) to allocate the headroom                                                                                        | `number`            | `null`  |    no     |
-| <a name="input_should_roll"></a> [should\_roll](#input\_should\_roll)| Should the cluster be rolled for configuration updates.| `bool` | `false` | no |
+| <a name="input_should_roll"></a> [should\_roll](#input\_should\_roll)| If set to true along with the cluster update, roll will be triggered.| `bool` | `false` | no |
 | <a name="input_conditioned_roll"></a> [conditioned\_roll](#input\_conditioned\_roll)| Default: false. Spot will perform a cluster Roll in accordance with a relevant modification of the cluster’s settings. When set to true , only specific changes in the cluster’s configuration will trigger a cluster roll (such as availability_zones, max_pods_per_node, enable_node_public_ip, os_disk_size_gb, os_disk_type, os_sku, kubernetes_version, vnet_subnet_ids, pod_subnet_ids, labels, taints and tags).| `bool`| `null` | no |
 | <a name="input_respect_pdb"></a> [respect\_pdb](#input\_respect\_pdb)| During the roll, if the parameter is set to True we honor PDB during the instance replacement.| `bool`| `true` | no |
 | <a name="input_batch_size_percentage"></a> [batch\_size\_percentage](#input\_batch\_size\_percentage) | Value as a percent to set the size of a batch in a roll. Valid values are 0-100. In case of null as value, the default value in the backend will be 20%.| `number`| `20` | no |
