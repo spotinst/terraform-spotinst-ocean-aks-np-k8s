@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.11.0"></a>
+## [v0.11.0] (February 19, 2024)
+
+- Added support for cluster roll. ([#29](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/29))
+
+
 <a name="v0.10.0"></a>
 ## [v0.10.0] (December 19, 2023)
 
+- Changelog_v0.10.0 ([#28](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/28))
 - ocean (aks-np): added `is_enabled` attribute for `auto_scaler_headroom_automatic` ([#27](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/27))
 
 
@@ -99,7 +106,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.10.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.11.0...HEAD
+[v0.11.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.10.0...v0.11.0
 [v0.10.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.9.0...v0.10.0
 [v0.9.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.8.0...v0.9.0
 [v0.8.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.7.0...v0.8.0
