@@ -55,5 +55,7 @@ module "ocean-aks-np" {
   vmsizes_filters_min_disk                 = 1
   shutdown_hours                           = { is_enabled = false,
                                                time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30"] }
+  should_roll                              = false
+  batch_size_percentage                    = 25
 }
 
