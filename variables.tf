@@ -225,6 +225,11 @@ variable "vmsizes_filters_vm_types" {
   default     = null
   description = "The filtered vm types will belong to one of the vm types from this list."
 }
+variable "vmsizes_filters_gpu_types" {
+  type        = list(string)
+  default     = null
+  description = "The filtered vm types will belong to one of the vm types from this list."
+}
 variable "autoscale_headrooms_cpu_per_unit" {
   type        = number
   default     = null
