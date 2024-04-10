@@ -43,7 +43,7 @@ module "ocean-aks-np" {
   vmsizes_filters_max_vcpu                 = 128
   vmsizes_filters_min_memory_gib           = 8
   vmsizes_filters_max_memory_gib           = 128
-  vmsizes_filters_series                   = ["D v3", "Dds_v4", "Dsv2", "A", "A v2","Ncas T4 v3"]
+  vmsizes_filters_series                   = ["D v3", "Dds_v4", "Dsv2", "A", "A v2","Ncas T4 v3","Ncs v2"]
   vmsizes_filters_exclude_series           = ["E v3","Esv3", "Eas_v5"]
   vmsizes_filters_architectures            = ["X86_64"]
   vmsizes_filters_accelerated_networking   = "Enabled"
@@ -53,7 +53,7 @@ module "ocean-aks-np" {
   vmsizes_filters_min_nics                 = 1
   vmsizes_filters_vm_types                 = ["generalPurpose","GPU"]
   vmsizes_filters_min_disk                 = 1
-  vmsizes_filters_gpu_types                = ["nvidia-tesla-t4"]
+  vmsizes_filters_gpu_types                = ["nvidia-tesla-p100","nvidia-tesla-t4"]
   shutdown_hours                           = { is_enabled = false,
                                                time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30"] }
   should_roll                              = false
