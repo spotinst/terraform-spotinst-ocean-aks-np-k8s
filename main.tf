@@ -80,6 +80,7 @@ resource "spotinst_ocean_aks_np" "v2" {
     min_nics                = var.vmsizes_filters_min_nics
     vm_types                = var.vmsizes_filters_vm_types
     min_disk                = var.vmsizes_filters_min_disk
+    gpu_types               = var.vmsizes_filters_gpu_types
   }
   headrooms {
     cpu_per_unit    = var.autoscale_headrooms_cpu_per_unit
