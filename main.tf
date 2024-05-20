@@ -43,6 +43,28 @@ resource "spotinst_ocean_aks_np" "v2" {
         time_windows = shutdown_hours.value.time_windows
       }
     }
+    dynamic "tasks" {
+      for_each = var.tasks != null ? var.tasks : []
+      content {
+        cron_expression = tasks.value.cron_expression
+        is_enabled      = tasks.value.is_enabled
+        task_type       = tasks.value.task_type
+        parameters {
+          dynamic "parameters_cluster_roll" {
+            for_each = tasks.value.parameters_cluster_roll
+            content {
+              batch_min_healthy_percentage = parameters_cluster_roll.value.batch_min_healthy_percentage
+              batch_size_percentage        = parameters_cluster_roll.value.batch_size_percentage
+              comment                      = parameters_cluster_roll.value.comment
+              respect_pdb                  = parameters_cluster_roll.value.respect_pdb
+              respect_restrict_scale_down  = parameters_cluster_roll.value.respect_restrict_scale_down
+              vng_ids                      = parameters_cluster_roll.value.vng_ids
+            }
+          }
+        }
+
+      }
+    }
   }
 
   health {

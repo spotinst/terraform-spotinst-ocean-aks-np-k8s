@@ -58,5 +58,22 @@ module "ocean-aks-np" {
                                                time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30"] }
   should_roll                              = false
   batch_size_percentage                    = 25
+
+  # Scheduling tasks parameters block (clusterRoll)
+  tasks = [
+    {
+      is_enabled = true
+      cron_expression = "0 1 * * *"
+      task_type = "clusterRoll"
+      parameters_cluster_roll = [{
+        batch_min_healthy_percentage = 80
+        batch_size_percentage = 20
+        comment = "Scheduled cluster roll"
+        respect_pdb = true
+        respect_restrict_scale_down = true
+        vng_ids = ["vng123", "vng456"]
+      }]
+    }
+  ]
 }
 
