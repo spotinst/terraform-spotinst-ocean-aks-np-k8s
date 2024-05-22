@@ -3,9 +3,16 @@
 
 
 
-<a name="v0.12.0"></a>
-## [v0.12.0] (April 15, 2024)
+<a name="v0.13.0"></a>
+## [v0.13.0] (May 22, 2024)
 
+- Added support for scheduling a roll using `tasks` block. ([#34](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/34))
+
+
+<a name="v0.12.0"></a>
+## [v0.12.0] (April 16, 2024)
+
+- Changelog_v0.12.0 ([#32](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/32))
 - added gpu_types in filters block([#31](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/31))
 
 
@@ -60,13 +67,13 @@
 - updated cluster name in documentation ([#15](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/15))
 
 
-<a name="v0.6.0"></a>
-## [v0.6.0] (September 6, 2023)
-
-
-
 <a name="v0.6.1"></a>
 ## [v0.6.1] (September 6, 2023)
+
+
+
+<a name="v0.6.0"></a>
+## [v0.6.0] (September 6, 2023)
 
 - changelog for v0.6.0 ([#14](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/14))
 - Updated shutdown_hours details and usage in document. ([#13](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/13))
@@ -113,7 +120,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.12.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.13.0...HEAD
+[v0.13.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.12.0...v0.13.0
 [v0.12.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.11.0...v0.12.0
 [v0.11.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.10.0...v0.11.0
 [v0.10.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.9.0...v0.10.0
@@ -121,9 +129,9 @@
 [v0.8.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.7.0...v0.8.0
 [v0.7.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.3...v0.7.0
 [v0.6.3]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.2...v0.6.3
-[v0.6.2]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.0...v0.6.2
-[v0.6.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.1...v0.6.0
-[v0.6.1]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.5.0...v0.6.1
+[v0.6.2]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.1...v0.6.2
+[v0.6.1]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.0...v0.6.1
+[v0.6.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.5.0...v0.6.0
 [v0.5.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.4.0...v0.5.0
 [v0.4.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.2.0...v0.3.0
