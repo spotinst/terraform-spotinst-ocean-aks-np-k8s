@@ -108,7 +108,7 @@ module "ocean-aks-np" {
         respect_restrict_scale_down        = true
         vng_ids                            = ["vng123", "vng456"]
       }
-                                              ]
+      ]
     }
   ]
 }
