@@ -316,5 +316,26 @@ variable "linux_os_config" {
     vm_max_map_count = optional(number,null)
   })
   default = null
+  description = "Custom Linux OS configuration"
 }
 
+###################
+# scheduling task  #
+variable "tasks" {
+  type = list(object({
+    is_enabled      = bool
+    cron_expression = string
+    task_type       = string
+    parameters_cluster_roll = optional(set(object({
+      batch_min_healthy_percentage = optional(number,null)
+      batch_size_percentage = optional(number,null)
+      comment = optional(string,null)
+      respect_pdb = optional(bool,null)
+      respect_restrict_scale_down = optional(bool,null)
+      vng_ids = optional(list(string),null)
+    })), [])
+  }))
+  default     = null
+  description = "task object"
+}
+##################
