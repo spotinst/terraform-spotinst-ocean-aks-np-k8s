@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.14.0"></a>
+## [v0.14.0] (May 23, 2024)
+
+- added support for `vm_max_map_count` field in `linux_os_config` ([#33](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/33))
+
+
 <a name="v0.13.0"></a>
 ## [v0.13.0] (May 22, 2024)
 
+- Changelog v0.13.0 ([#35](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/35))
 - Added support for scheduling a roll using `tasks` block. ([#34](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/34))
 
 
@@ -120,7 +127,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.13.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.14.0...HEAD
+[v0.14.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.13.0...v0.14.0
 [v0.13.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.12.0...v0.13.0
 [v0.12.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.11.0...v0.12.0
 [v0.11.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.10.0...v0.11.0
