@@ -18,6 +18,8 @@ module "ocean-aks-np" {
   autoscaler_headroom_automatic_is_enabled = true
   autoscaler_headroom_automatic_percentage = 5
   health_grace_period                      = 600
+  linux_os_config                          = {
+    vm_max_map_count                       = 65531}
   max_pods_per_node                        = 30
   enable_node_public_ip                    = true
   os_disk_size_gb                          = 32
