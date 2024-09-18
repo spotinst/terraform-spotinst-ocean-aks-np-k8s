@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.15.0"></a>
+## [v0.15.0] (September 18, 2024)
+
+- updated controller v2 reference ([#37](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/37))
+
+
 <a name="v0.14.0"></a>
 ## [v0.14.0] (May 23, 2024)
 
+- Changelog update ([#36](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/36))
 - added support for `vm_max_map_count` field in `linux_os_config` ([#33](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/33))
 
 
@@ -77,11 +84,6 @@
 <a name="v0.6.1"></a>
 ## [v0.6.1] (September 6, 2023)
 
-
-
-<a name="v0.6.0"></a>
-## [v0.6.0] (September 6, 2023)
-
 - changelog for v0.6.0 ([#14](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/14))
 - Updated shutdown_hours details and usage in document. ([#13](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/13))
 - Added default value in variable.tf ([#12](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/12))
@@ -127,7 +129,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.14.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.15.0...HEAD
+[v0.15.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.14.0...v0.15.0
 [v0.14.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.13.0...v0.14.0
 [v0.13.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.12.0...v0.13.0
 [v0.12.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.11.0...v0.12.0
@@ -138,8 +141,7 @@
 [v0.7.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.3...v0.7.0
 [v0.6.3]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.2...v0.6.3
 [v0.6.2]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.1...v0.6.2
-[v0.6.1]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.6.0...v0.6.1
-[v0.6.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.5.0...v0.6.0
+[v0.6.1]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.5.0...v0.6.1
 [v0.5.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.4.0...v0.5.0
 [v0.4.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.2.0...v0.3.0
