@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.16.0"></a>
+## [v0.16.0] (January 14, 2025)
+
+- added support for `logging`, `vng_template_scheduling` and `suspension_hours` objects. ([#39](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/39))
+
+
 <a name="v0.15.0"></a>
 ## [v0.15.0] (September 18, 2024)
 
+- Changelog v0.15.0 ([#38](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/38))
 - updated controller v2 reference ([#37](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/37))
 
 
@@ -129,7 +136,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.15.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.16.0...HEAD
+[v0.16.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.15.0...v0.16.0
 [v0.15.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.14.0...v0.15.0
 [v0.14.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.13.0...v0.14.0
 [v0.13.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.12.0...v0.13.0
