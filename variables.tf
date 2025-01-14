@@ -258,6 +258,14 @@ variable "shutdown_hours" {
   default     = null
   description = "shutdown_hours object"
 }
+variable "suspension_hours" {
+  type = object({
+    is_enabled   = bool
+    time_windows = list(string)
+  })
+  default     = null
+  description = "suspension_hours object"
+}
 
 ## Update Policy - update_policy ##
 variable "should_roll" {
@@ -333,9 +341,39 @@ variable "tasks" {
       respect_pdb = optional(bool,null)
       respect_restrict_scale_down = optional(bool,null)
       vng_ids = optional(list(string),null)
+    })), []),
+    parameters_upgrade_config = optional(set(object({
+      apply_roll = optional(bool,null)
+      scope_version = optional(string,null)
+      roll_parameters = optional(set(object({
+        batch_min_healthy_percentage = optional(number,null)
+        batch_size_percentage = optional(number,null)
+        comment = optional(string,null)
+        respect_pdb = optional(bool,null)
+        respect_restrict_scale_down = optional(bool,null)
+      })), []),
     })), [])
   }))
   default     = null
-  description = "task object"
+  description = "tasks object"
 }
 ##################
+
+# Logging
+variable "data_integration_id" {
+  type        = string
+  default     = null
+  description = "The identifier of The Azure Blob data integration to export the logs to."
+}
+
+#vng template scheduling
+ variable "vng_template_scheduling" {
+  type = list(object({
+    vng_template_shutdown_hours= optional(set(object({
+        is_enabled   = optional(bool,null)
+        time_windows = optional(list(string),null)
+    })), [])
+ }))
+  default     = null
+  description = "vng template scheduling object"
+}
