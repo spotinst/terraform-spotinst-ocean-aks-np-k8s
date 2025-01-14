@@ -26,7 +26,7 @@ module "ocean-aks-np" {
   os_disk_type                             = "Managed"
   os_type                                  = "Linux"
   os_sku                                   = "Ubuntu"
-  kubernetes_version                       = "1.26"
+  kubernetes_version                       = "1.30"
   pod_subnet_ids                           = ["/subscriptions/123456-1234-1234-1234-123456789/resourceGroups/ExampleResourceGroup/providers/Microsoft.Network/virtualNetworks/ExampleVirtualNetwork/subnets/default"]
   vnet_subnet_ids                          = ["/subscriptions/123456-1234-1234-1234-123456789/resourceGroups/ExampleResourceGroup/providers/Microsoft.Network/virtualNetworks/ExampleVirtualNetwork/subnets/default"]
   node_min_count                           = 1
@@ -60,22 +60,46 @@ module "ocean-aks-np" {
                                                time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30"] }
   should_roll                              = false
   batch_size_percentage                    = 25
+  logging_azure_blob_id = "/subscriptions/SubscriptionId/resourceGroups/ResourceGroupName/providers/Microsoft.Storage/storageAccounts/StorageAccountName"
+  suspension_hours                           = { is_enabled = false,
+                                               time_windows = ["Fri:15:30-Sun:13:30", "Sun:15:30-Mon:13:30"] }
+
+     vng_template_scheduling = [{
+      vng_template_shutdown_hours = [{
+          is_enabled = true
+          time_windows = ["Sat:15:30-Sun:13:30", "Sun:15:30-Mon:08:30"]
+          }]
+      }]
 
   # Scheduling tasks parameters block (clusterRoll)
-  tasks = [
+   tasks = [
     {
       is_enabled = true
       cron_expression = "0 1 * * *"
+      task_type = "autoUpgradeVersion"
+      parameters_upgrade_config = [{
+          apply_roll = true
+          scope_version = "patch"
+          roll_parameters = [{
+            batch_min_healthy_percentage = 80
+            batch_size_percentage = 20
+            comment = "Scheduled upgrade roll"
+            respect_pdb = true
+            respect_restrict_scale_down = true
+        }]
+      }]
+    },
+{
+      is_enabled = true
+      cron_expression = "0 5 * * *"
       task_type = "clusterRoll"
       parameters_cluster_roll = [{
-        batch_min_healthy_percentage = 80
-        batch_size_percentage = 20
-        comment = "Scheduled cluster roll"
-        respect_pdb = true
-        respect_restrict_scale_down = true
-        vng_ids = ["vng123", "vng456"]
+            batch_min_healthy_percentage = 50
+            batch_size_percentage = 30
+            comment = "Scheduled cluster roll"
+            respect_pdb = true
+            respect_restrict_scale_down = true
       }]
     }
   ]
 }
-

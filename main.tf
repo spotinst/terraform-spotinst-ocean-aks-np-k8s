@@ -43,6 +43,13 @@ resource "spotinst_ocean_aks_np" "v2" {
         time_windows = shutdown_hours.value.time_windows
       }
     }
+    dynamic "suspension_hours" {
+      for_each = var.suspension_hours != null ? [var.suspension_hours] : []
+      content {
+        is_enabled   = suspension_hours.value.is_enabled
+        time_windows = suspension_hours.value.time_windows
+      }
+    }
     dynamic "tasks" {
       for_each = var.tasks != null ? var.tasks : []
       content {
@@ -61,8 +68,24 @@ resource "spotinst_ocean_aks_np" "v2" {
               vng_ids                      = parameters_cluster_roll.value.vng_ids
             }
           }
+          dynamic "parameters_upgrade_config" {
+            for_each = tasks.value.parameters_upgrade_config
+            content {
+              apply_roll = parameters_upgrade_config.value.apply_roll
+              scope_version        = parameters_upgrade_config.value.scope_version
+              dynamic "roll_parameters" {
+                for_each = parameters_upgrade_config.value.roll_parameters
+                content {
+                  batch_min_healthy_percentage = roll_parameters.value.batch_min_healthy_percentage
+                  batch_size_percentage        = roll_parameters.value.batch_size_percentage
+                  comment                      = roll_parameters.value.comment
+                  respect_pdb                  = roll_parameters.value.respect_pdb
+                  respect_restrict_scale_down  = roll_parameters.value.respect_restrict_scale_down
+                }
+              }
+            }
+          }
         }
-
       }
     }
   }
@@ -145,5 +168,28 @@ resource "spotinst_ocean_aks_np" "v2" {
 
     }
   }
-}
 
+  dynamic logging {
+    for_each = var.logging_azure_blob_id != null ? [var.logging_azure_blob_id] : []
+    content {
+      export {
+       azure_blob {
+        id = var.logging_azure_blob_id
+       }
+      }
+    }
+  }
+
+  dynamic "vng_template_scheduling" {
+    for_each = var.vng_template_scheduling != null ? var.vng_template_scheduling : []
+    content {
+      dynamic "vng_template_shutdown_hours" {
+        for_each = vng_template_scheduling.value.vng_template_shutdown_hours
+        content {
+          is_enabled   = vng_template_shutdown_hours.value.is_enabled
+          time_windows = vng_template_shutdown_hours.value.time_windows
+        }
+      }
+    }
+  }
+}
