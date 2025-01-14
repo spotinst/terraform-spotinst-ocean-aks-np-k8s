@@ -60,16 +60,16 @@ module "ocean-aks-np" {
                                                time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30"] }
   should_roll                              = false
   batch_size_percentage                    = 25
-  logging_azure_blob_id = "/subscriptions/SubscriptionId/resourceGroups/ResourceGroupName/providers/Microsoft.Storage/storageAccounts/StorageAccountName"
-  suspension_hours                           = { is_enabled = false,
+  data_integration_id                      = "di-abcd123"
+  suspension_hours                         = { is_enabled = false,
                                                time_windows = ["Fri:15:30-Sun:13:30", "Sun:15:30-Mon:13:30"] }
 
-     vng_template_scheduling = [{
+    vng_template_scheduling = [{
       vng_template_shutdown_hours = [{
-          is_enabled = true
-          time_windows = ["Sat:15:30-Sun:13:30", "Sun:15:30-Mon:08:30"]
-          }]
+        is_enabled = true
+        time_windows = ["Sat:15:30-Sun:13:30", "Sun:15:30-Mon:08:30"]
       }]
+    }]
 
   # Scheduling tasks parameters block (clusterRoll)
    tasks = [

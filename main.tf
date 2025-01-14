@@ -170,11 +170,11 @@ resource "spotinst_ocean_aks_np" "v2" {
   }
 
   dynamic logging {
-    for_each = var.logging_azure_blob_id != null ? [var.logging_azure_blob_id] : []
+    for_each = var.data_integration_id != null ? [var.data_integration_id] : []
     content {
       export {
        azure_blob {
-        id = var.logging_azure_blob_id
+        id = var.data_integration_id
        }
       }
     }

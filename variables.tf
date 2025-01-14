@@ -360,7 +360,7 @@ variable "tasks" {
 ##################
 
 # Logging
-variable "logging_azure_blob_id" {
+variable "data_integration_id" {
   type        = string
   default     = null
   description = "The identifier of The Azure Blob data integration to export the logs to."
