@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.17.0"></a>
+## [v0.17.0] (April 7, 2026)
+
+- Added draining_timeout object under Strategy ([#42](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/42))
+
+
 <a name="v0.16.0"></a>
 ## [v0.16.0] (January 14, 2025)
 
+- Changelog 0.16.0 ([#40](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/40))
 - added support for `logging`, `vng_template_scheduling` and `suspension_hours` objects. ([#39](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/39))
 
 
@@ -136,7 +143,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.16.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.17.0...HEAD
+[v0.17.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.16.0...v0.17.0
 [v0.16.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.15.0...v0.16.0
 [v0.15.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.14.0...v0.15.0
 [v0.14.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.13.0...v0.14.0
