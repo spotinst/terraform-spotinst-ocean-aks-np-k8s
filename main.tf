@@ -116,6 +116,7 @@ resource "spotinst_ocean_aks_np" "v2" {
 
   spot_percentage      = var.spot_percentage
   fallback_to_ondemand = var.fallback_to_ondemand
+  draining_timeout     = var.draining_timeout
 
   filters {
     min_vcpu                = var.vmsizes_filters_min_vcpu
