@@ -33,6 +33,7 @@ module "ocean-aks-np" {
   node_max_count                           = 100
   spot_percentage                          = 50
   fallback_to_ondemand                     = true
+  draining_timeout                         = 600
   autoscale_headrooms_cpu_per_unit         = 6
   autoscale_headrooms_memory_per_unit      = 10
   autoscale_headrooms_gpu_per_unit         = 4
