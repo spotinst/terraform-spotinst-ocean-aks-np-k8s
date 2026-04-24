@@ -18,6 +18,8 @@ module "ocean-aks-np" {
   autoscaler_headroom_automatic_is_enabled = true
   autoscaler_headroom_automatic_percentage = 5
   health_grace_period                      = 600
+  health_should_replace_unhealthy_instances = false
+  health_check_unhealthy_duration_before_replacement = 180
   linux_os_config                          = {
     vm_max_map_count                       = 65531}
   max_pods_per_node                        = 30
@@ -34,6 +36,7 @@ module "ocean-aks-np" {
   spot_percentage                          = 50
   fallback_to_ondemand                     = true
   draining_timeout                         = 600
+  should_utilize_commitments               = true
   autoscale_headrooms_cpu_per_unit         = 6
   autoscale_headrooms_memory_per_unit      = 10
   autoscale_headrooms_gpu_per_unit         = 4

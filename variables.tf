@@ -67,6 +67,17 @@ variable "health_grace_period" {
   default     = 600
   description = "The amount of time to wait, in seconds, from the moment the instance has launched until monitoring of its health checks begins."
 }
+variable "health_should_replace_unhealthy_instances" {
+  type        = bool
+  default     = false
+  description = "Indicates whether Ocean automatically replaces nodes that remain in a NotReady or Unschedulable state. When false, unhealthy nodes are detected but not replaced. When true, unhealthy nodes are automatically replaced."
+}
+
+variable "health_check_unhealthy_duration_before_replacement" {
+  type        = number
+  default     = 180
+  description = "The amount of time, in seconds, a node is allowed to remain unhealthy after the grace period has elapsed before Ocean automatically replaces it."
+}
 variable "availability_zones" {
   type        = list(string)
   description = "An Array holding Availability Zones, this configures the availability zones the Ocean may launch instances in per VNG."
@@ -140,6 +151,11 @@ variable "draining_timeout" {
   type        = number
   default     = null
   description = "Time in seconds to allow the node to drain before it is terminated."
+}
+variable "should_utilize_commitments" {
+  type        = bool
+  default     = false
+  description = "Determines whether to utilize any existing Azure Savings Plans or Reserved Instances associated with the subscription for On-Demand VMs."
 }
 variable "taints" {
   type = list(object({
