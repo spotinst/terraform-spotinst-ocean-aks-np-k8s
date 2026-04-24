@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.18.0"></a>
+## [v0.18.0] (April 24, 2026)
+
+- feat(ocean Azure/cluster): Added support for ShouldUtilizeCommitments under Strategy Object. ([#44](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/44))
+
+
 <a name="v0.17.0"></a>
 ## [v0.17.0] (April 7, 2026)
 
+- changelog ([#43](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/43))
 - Added draining_timeout object under Strategy ([#42](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/42))
 
 
@@ -143,7 +150,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.17.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.18.0...HEAD
+[v0.18.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.17.0...v0.18.0
 [v0.17.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.16.0...v0.17.0
 [v0.16.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.15.0...v0.16.0
 [v0.15.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.14.0...v0.15.0
