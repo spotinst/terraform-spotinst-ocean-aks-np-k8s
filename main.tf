@@ -92,6 +92,8 @@ resource "spotinst_ocean_aks_np" "v2" {
 
   health {
     grace_period = var.health_grace_period
+    should_replace_unhealthy_instances            = var.health_should_replace_unhealthy_instances
+    health_check_unhealthy_duration_before_replacement = var.health_check_unhealthy_duration_before_replacement
   }
   availability_zones    = var.availability_zones
   max_pods_per_node     = var.max_pods_per_node
@@ -117,6 +119,7 @@ resource "spotinst_ocean_aks_np" "v2" {
   spot_percentage      = var.spot_percentage
   fallback_to_ondemand = var.fallback_to_ondemand
   draining_timeout     = var.draining_timeout
+  should_utilize_commitments = var.should_utilize_commitments
 
   filters {
     min_vcpu                = var.vmsizes_filters_min_vcpu
