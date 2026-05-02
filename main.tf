@@ -1,9 +1,3 @@
-provider "spotinst" {
-  //  version = "~> 0.11"
-  # Credentials should be fetched from ENV VARS injected by Jenkins
-  token = var.spotinst_token
-  account = var.spotinst_account
-}
 resource "spotinst_ocean_aks_np" "v2" {
   name                                   = var.ocean_cluster_name
   aks_region                             = var.aks_region
