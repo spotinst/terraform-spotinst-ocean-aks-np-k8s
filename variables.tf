@@ -37,6 +37,11 @@ variable "autoscaler_is_enabled" {
   default     = true
   description = "Enable the Ocean Kubernetes Autoscaler."
 }
+variable "autoscaler_enable_automatic_and_manual_headroom" {
+  type        = bool
+  default     = false
+  description = "Enable mixed mode for manual and automatic headroom. Relevant only when autoscale_headroom.automatic.is_enabled is set to true. If false, Ocean manages headroom automatically without combining with manual VNG headrooms."
+}
 variable "autoscaler_resource_limits_max_vcpu" {
   type        = number
   default     = null
@@ -250,6 +255,11 @@ variable "vmsizes_filters_gpu_types" {
   type        = list(string)
   default     = null
   description = "The filtered gpu types will belong to one of the gpu types from this list. Supported GPU Types: `nvidia-tesla-v100`, `amd-radeon-instinct-mi25`, `nvidia-a10`, `nvidia-tesla-a100`, `nvidia-tesla-k80`, `nvidia-tesla-m60`, `nvidia-tesla-p100`, `nvidia-tesla-p40`, `nvidia-tesla-t4`, `nvidia-tesla-h100`."
+}
+variable "autoscale_auto_headroom_percentage" {
+  type        = number
+  default     = null
+  description = "Optionally set a number between 0-200 to control the percentage of VNG resources dedicated to automatic headroom."
 }
 variable "autoscale_headrooms_cpu_per_unit" {
   type        = number

@@ -14,6 +14,7 @@ resource "spotinst_ocean_aks_np" "v2" {
 
   autoscaler {
     autoscale_is_enabled      = var.autoscaler_is_enabled
+    enable_automatic_and_manual_headroom = var.autoscaler_enable_automatic_and_manual_headroom
 
     resource_limits {
       max_vcpu       = var.autoscaler_resource_limits_max_vcpu
@@ -138,6 +139,9 @@ resource "spotinst_ocean_aks_np" "v2" {
     min_disk                = var.vmsizes_filters_min_disk
     gpu_types               = var.vmsizes_filters_gpu_types
   }
+
+  auto_headroom_percentage = var.autoscale_auto_headroom_percentage
+
   headrooms {
     cpu_per_unit    = var.autoscale_headrooms_cpu_per_unit
     memory_per_unit = var.autoscale_headrooms_memory_per_unit
