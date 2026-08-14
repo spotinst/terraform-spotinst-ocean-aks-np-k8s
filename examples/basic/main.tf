@@ -17,6 +17,7 @@ module "ocean-aks-np" {
   autoscaler_max_scale_down_percentage     = 30
   autoscaler_headroom_automatic_is_enabled = true
   autoscaler_headroom_automatic_percentage = 5
+  autoscaler_enable_automatic_and_manual_headroom = true
   health_grace_period                      = 600
   health_should_replace_unhealthy_instances = false
   health_check_unhealthy_duration_before_replacement = 180
@@ -37,6 +38,7 @@ module "ocean-aks-np" {
   fallback_to_ondemand                     = true
   draining_timeout                         = 600
   should_utilize_commitments               = true
+  autoscale_auto_headroom_percentage       = 5
   autoscale_headrooms_cpu_per_unit         = 6
   autoscale_headrooms_memory_per_unit      = 10
   autoscale_headrooms_gpu_per_unit         = 4
