@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.19.0"></a>
+## [v0.19.0] (August 14, 2026)
+
+- feat(ocean Azure/cluster): Added support for AutoHeadroomPercentage Object under AutoScale object. Added support for EnableAutomaticAndManualHeadroom Object under AutoScaler object. ([#46](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/46))
+
+
 <a name="v0.18.0"></a>
 ## [v0.18.0] (April 24, 2026)
 
+- Changelog ([#45](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/45))
 - feat(ocean Azure/cluster): Added support for ShouldUtilizeCommitments under Strategy Object. ([#44](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/44))
 
 
@@ -150,7 +157,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.18.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.19.0...HEAD
+[v0.19.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.18.0...v0.19.0
 [v0.18.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.17.0...v0.18.0
 [v0.17.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.16.0...v0.17.0
 [v0.16.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.15.0...v0.16.0
