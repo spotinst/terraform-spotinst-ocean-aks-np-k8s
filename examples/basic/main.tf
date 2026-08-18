@@ -62,6 +62,56 @@ module "ocean-aks-np" {
   vmsizes_filters_vm_types                 = ["generalPurpose","GPU"]
   vmsizes_filters_min_disk                 = 1
   vmsizes_filters_gpu_types                = ["nvidia-tesla-p100","nvidia-tesla-t4"]
+
+  # Local DNS Profile
+  local_dns_profile = {
+    mode = "Required"
+    vnet_dns_overrides = {
+      "." = {
+        query_logging                   = "Error"
+        protocol                        = "PreferUDP"
+        forward_destination              = "VnetDNS"
+        forward_policy                   = "Sequential"
+        max_concurrent                   = 1000
+        cache_duration_in_seconds        = 3600
+        serve_stale_duration_in_seconds  = 3600
+        serve_stale                      = "Immediate"
+      }
+      "cluster.local" = {
+        query_logging                   = "Error"
+        protocol                        = "ForceTCP"
+        forward_destination              = "ClusterCoreDNS"
+        forward_policy                   = "Sequential"
+        max_concurrent                   = 1000
+        cache_duration_in_seconds        = 3600
+        serve_stale_duration_in_seconds  = 3600
+        serve_stale                      = "Immediate"
+      }
+    }
+    kube_dns_overrides = {
+      "." = {
+        query_logging                   = "Error"
+        protocol                        = "PreferUDP"
+        forward_destination              = "ClusterCoreDNS"
+        forward_policy                   = "Sequential"
+        max_concurrent                   = 1000
+        cache_duration_in_seconds        = 3600
+        serve_stale_duration_in_seconds  = 3600
+        serve_stale                      = "Immediate"
+      }
+      "cluster.local" = {
+        query_logging                   = "Error"
+        protocol                        = "ForceTCP"
+        forward_destination              = "ClusterCoreDNS"
+        forward_policy                   = "Sequential"
+        max_concurrent                   = 1000
+        cache_duration_in_seconds        = 3600
+        serve_stale_duration_in_seconds  = 3600
+        serve_stale                      = "Immediate"
+      }
+    }
+  }
+
   shutdown_hours                           = { is_enabled = false,
                                                time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30"] }
   should_roll                              = false
