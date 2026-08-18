@@ -408,3 +408,32 @@ variable "data_integration_id" {
   default     = null
   description = "vng template scheduling object"
 }
+
+# Local DNS Profile
+variable "local_dns_profile" {
+  type = object({
+    mode = string
+    vnet_dns_overrides = optional(map(object({
+      query_logging                   = optional(string, null)
+      protocol                        = optional(string, null)
+      forward_destination             = optional(string, null)
+      forward_policy                  = optional(string, null)
+      max_concurrent                  = optional(number, null)
+      cache_duration_in_seconds       = optional(number, null)
+      serve_stale_duration_in_seconds = optional(number, null)
+      serve_stale                     = optional(string, null)
+    })), null)
+    kube_dns_overrides = optional(map(object({
+      query_logging                   = optional(string, null)
+      protocol                        = optional(string, null)
+      forward_destination             = optional(string, null)
+      forward_policy                  = optional(string, null)
+      max_concurrent                  = optional(number, null)
+      cache_duration_in_seconds       = optional(number, null)
+      serve_stale_duration_in_seconds = optional(number, null)
+      serve_stale                     = optional(string, null)
+    })), null)
+  })
+  default     = null
+  description = "AKS LocalDNS profile configuration for the VNG. Requires VM sizes with at least 4 vCPUs and Linux (Ubuntu 22.04+ or Azure Linux) OS."
+}
