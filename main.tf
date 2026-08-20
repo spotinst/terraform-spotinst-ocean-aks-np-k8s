@@ -99,6 +99,7 @@ resource "spotinst_ocean_aks_np" "v2" {
   availability_zones    = var.availability_zones
   max_pods_per_node     = var.max_pods_per_node
   enable_node_public_ip = var.enable_node_public_ip
+  encryption_at_host    = var.encryption_at_host
   os_disk_size_gb       = var.os_disk_size_gb
   os_disk_type          = var.os_disk_type
   os_type               = var.os_type

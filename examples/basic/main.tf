@@ -25,6 +25,7 @@ module "ocean-aks-np" {
     vm_max_map_count                       = 65531}
   max_pods_per_node                        = 30
   enable_node_public_ip                    = true
+  encryption_at_host                       = true
   os_disk_size_gb                          = 32
   os_disk_type                             = "Managed"
   os_type                                  = "Linux"
