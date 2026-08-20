@@ -179,7 +179,14 @@ resource "spotinst_ocean_aks_np" "v2" {
     gpu_types               = var.vmsizes_filters_gpu_types
   }
 
-  auto_headroom_percentage = var.autoscale_auto_headroom_percentage
+  dynamic "vm_sizes" {
+    for_each = var.vmsizes_preferred_vm_sizes != null ? [var.vmsizes_preferred_vm_sizes] : []
+    content {
+      preferred_vm_sizes = vm_sizes.value
+    }
+  }
+
+  # auto_headroom_percentage = var.autoscale_auto_headroom_percentage
 
   headrooms {
     cpu_per_unit    = var.autoscale_headrooms_cpu_per_unit

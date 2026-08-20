@@ -63,6 +63,7 @@ module "ocean-aks-np" {
   vmsizes_filters_vm_types                 = ["generalPurpose","GPU"]
   vmsizes_filters_min_disk                 = 1
   vmsizes_filters_gpu_types                = ["nvidia-tesla-p100","nvidia-tesla-t4"]
+  vmsizes_preferred_vm_sizes               = ["Standard_D4s_v3","Standard_D8s_v3"]
 
   # Local DNS Profile
   local_dns_profile = {
