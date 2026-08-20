@@ -186,7 +186,7 @@ resource "spotinst_ocean_aks_np" "v2" {
     }
   }
 
-  # auto_headroom_percentage = var.autoscale_auto_headroom_percentage
+  auto_headroom_percentage = var.autoscale_auto_headroom_percentage
 
   headrooms {
     cpu_per_unit    = var.autoscale_headrooms_cpu_per_unit
