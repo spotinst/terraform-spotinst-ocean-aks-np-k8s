@@ -167,6 +167,11 @@ variable "should_utilize_commitments" {
   default     = false
   description = "Determines whether to utilize any existing Azure Savings Plans or Reserved Instances associated with the subscription for On-Demand VMs."
 }
+variable "orientation" {
+  type        = string
+  default     = "cost"
+  description = "Controls and manages optimization priorities. Possible values: cost, availability."
+}
 variable "taints" {
   type = list(object({
     key    = string

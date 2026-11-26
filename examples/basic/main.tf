@@ -37,6 +37,7 @@ module "ocean-aks-np" {
   node_max_count                           = 100
   spot_percentage                          = 50
   fallback_to_ondemand                     = true
+  orientation                              = "cost"
   draining_timeout                         = 600
   should_utilize_commitments               = true
   autoscale_auto_headroom_percentage       = 5
