@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.21.0"></a>
+## [v0.21.0] (November 27, 2026)
+
+- feat(ocean Azure/cluster): Added support for Orientation Object. ([#50](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/50))
+
+
 <a name="v0.20.0"></a>
 ## [v0.20.0] (August 25, 2026)
 
+- changelog update ([#49](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/49))
 - feat(ocean-aks-np): Added support for LocalDnsProfile Object. ([#48](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/issues/48))
 
 
@@ -164,7 +171,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.20.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.21.0...HEAD
+[v0.21.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.20.0...v0.21.0
 [v0.20.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.19.0...v0.20.0
 [v0.19.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.18.0...v0.19.0
 [v0.18.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s/compare/v0.17.0...v0.18.0
